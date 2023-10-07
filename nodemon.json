@@ -1,6 +1,7 @@
 {
     "env": {
         "MONGO_USER": "jorgerodriguezr",
-        "MONGO_PASSWORD": "WDw92xH8kQt49YSM"
+        "MONGO_PASSWORD": "WDw92xH8kQt49YSM",
+        "MONGO_DB": "booking-api"
     }
 }
