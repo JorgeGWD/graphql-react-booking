@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const bookingSchema = new Schema({
-    evetns: {
+    evetn: {
         type: Schema.Types.ObjectId,
         ref: 'Event'
     },
