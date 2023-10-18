@@ -10,7 +10,7 @@ const events = async eventIds => {
         events.map(event => {
             return {
                 ...event._doc,
-                id: event.id,
+                _id: event.id,
                 date: new Date(event._doc.date).toISOString(),
                 creator: user.bind(this, event.creator)
             }
@@ -39,7 +39,7 @@ const user = async userId => {
         const user = await User.findById(userId)
         return {
             ...user._doc,
-            id: user.id,
+            _id: user.id,
             createdEvents: events.bind(this, user._doc.createdEvents)
         }
     } catch (err) {
@@ -86,7 +86,7 @@ module.exports = {
             description: args.eventInput.description,
             price: +args.eventInput.price,
             date: new Date(args.eventInput.date),
-            creator: '652469dc114352cd0d913ad0'
+            creator: '65303ed6c1800c55ce1c767d'
         })
         let createdEvent
         try {
@@ -97,7 +97,7 @@ module.exports = {
                 date: new Date(event._doc.date).toISOString(),
                 creator: user.bind(this, result._doc.creator)
             }
-            const creator = await User.findById('652469dc114352cd0d913ad0')
+            const creator = await User.findById('65303ed6c1800c55ce1c767d')
             if(!creator) {
                 throw new Error('User not found.')
             }
@@ -132,7 +132,7 @@ module.exports = {
     bookEvent: async args => {
         const fetchedEvent = await Event.findOne({_id: args.eventId})
         const booking = new Booking({
-            user: '652469dc114352cd0d913ad0',
+            user: '65303ed6c1800c55ce1c767d',
             event: fetchedEvent
         })
         const result = await booking.save()
