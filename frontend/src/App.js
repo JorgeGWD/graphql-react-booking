@@ -1,13 +1,18 @@
 import './App.css';
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import AuthPage from './pages/Auth';
+import EventsPage from './pages/Events';
+import BookingPage from './pages/Bookings';
 
-function App() {
+const App = () => {
     return (
         <BrowserRouter>
-            <Route path="/" Component={null} />
-            <Route path='/auth' Component={null} />
-            <Route path='/events' Component={null} />
-            <Route path='/booking' Component={null} />
+            <Routes>
+                <Route path='/' element={<Navigate to='/auth' />} />
+                <Route path='/auth' element={<AuthPage />} />
+                <Route path='/events' element={<EventsPage />} />
+                <Route path='/booking' element={<BookingPage />} />
+            </Routes>
         </BrowserRouter>
     );
 }
