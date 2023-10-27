@@ -1,0 +1,31 @@
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 25rem;
+  max-width: 80%;
+  margin: 5rem auto;
+}
+.auth-form__control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.auth-form__control label, .auth-form__control input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.auth-form__actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.auth-form__actions button {
+  padding: 10px 20px;
+  font: inherit;
+  background-color: lightblue;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}/*# sourceMappingURL=Auth.css.map */
